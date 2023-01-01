@@ -8,11 +8,11 @@
     state: present
     reload: yes
 
-- name: Install docker on Debian family
+- name: Install iptables on Debian family
   import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Enable iptables-persistent
+- name: Enable netfilter-persistent
   ansible.builtin.systemd:
     name: netfilter-persistent
     enabled: yes
