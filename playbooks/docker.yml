@@ -1,0 +1,5 @@
+---
+- hosts: dockers
+  become: true
+  roles:
+    - docker

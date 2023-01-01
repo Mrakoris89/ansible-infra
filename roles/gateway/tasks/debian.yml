@@ -1,0 +1,6 @@
+---
+- name: Install iptables
+  ansible.builtin.apt:
+    pkg:
+      - iptables
+      - iptables-persistent
