@@ -1,4 +1,4 @@
 ---
-- hosts: gw
+- hosts: gateway
   roles:
     - gateway
