@@ -9,8 +9,10 @@
     reload: yes
 
 - name: Install iptables on Debian family
-  import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
+  ansible.builtin.apt:
+    pkg:
+      - iptables
+      - iptables-persistent
 
 - name: Enable netfilter-persistent
   ansible.builtin.systemd:
