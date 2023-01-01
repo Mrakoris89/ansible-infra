@@ -7,9 +7,16 @@ Debian like
 ```
 apt -y install ansible sshpass
 ```
-RedHat like 
+
+Centos
 ```
+yum -y install epel-release
 yum -y install ansible sshpass
+```
+
+Fedora
+```
+dnf -y install ansible sshpass
 ```
 
 ### Inventory
@@ -24,20 +31,14 @@ ansible-inventory -i inventories/test --list
 
 For example tests inventory
 
-Install key on remote hosts
+Install key on remote hosts (root)
 ```
-ansible-playbook playbooks/upload-sshkey.yml -i inventories/test -u root -k -e username="root"
+ansible-playbook playbooks/upload-sshkey.yml -i inventories/test -e username="root" -u root -k
 ```
-
-Ubuntu become (user sa)
-````
-ansible-playbook playbooks/docker.yml -i inventories/test/hosts.yml -l ubuntu.test.lab -u sa -K
-````
-
-Debian,Centos,Fedora (root)
-````
-ansible-playbook playbooks/docker.yml -i inventories/test/hosts.yml -l ubuntu.test.lab -u root
-````
+Special user sa (Ubuntu)
+```
+ansible-playbook playbooks/upload-sshkey.yml -i inventories/test -e username="sa" -l ubuntu.test.lab -u sa -k -b -K
+```
 
 Check alive hosts
 ```
