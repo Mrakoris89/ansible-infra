@@ -93,9 +93,6 @@ Install with another docker network:
 ansible-playbook -i <address your host>, docker.yml -e bip=10.30.0.0/16 -e base_net=10.0.0.0/8 -e size_nets=16
 ```
 
-Clone repository
-
-
 License
 -------
 
