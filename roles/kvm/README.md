@@ -11,6 +11,7 @@ Example Playbook
 ----------------
 
     - hosts: kvm
+      become: true
       roles:
          - { role: kvm }
 
@@ -33,9 +34,10 @@ EOF
 
 4. Generate playbook
 
-```bash
+```
 cat <<EOF  > play-kvm.yml
 - hosts: kvm
+  become: true
   roles:
      - { role: kvm }
 EOF
