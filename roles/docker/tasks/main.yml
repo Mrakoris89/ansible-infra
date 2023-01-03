@@ -22,7 +22,7 @@
     dest: /etc/docker/daemon.json
     backup: yes
   when: |
-      (bip is defined) and
-      (base_net is defined) and
-      (size_nets is defined)
+    (bip is defined) and
+    (base_net is defined) and
+    (size_nets is defined)
   notify: restart docker
