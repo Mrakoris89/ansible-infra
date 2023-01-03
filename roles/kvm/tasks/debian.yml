@@ -1,8 +1,12 @@
 ---
-# tasks file for kvm
-- name: Install
+- name: Install kvm
   ansible.builtin.apt:
     pkg:
       - qemu-system
       - libvirt-daemon-system
+
+- name: Install virt-manager
+  ansible.builtin.apt:
+    pkg:
       - virt-manager
+  tags: [ 'never', 'virt-manager' ]

@@ -9,3 +9,6 @@ galaxy_info:
     - name: Debian
       versions:
         - "11"
+    - name: Ubuntu
+      versions:
+        - "jammy"
